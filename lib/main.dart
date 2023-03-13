@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         // custom color
         backgroundColor: Color(0xFF181818),
         body:Padding(
-          padding:EdgeInsets.symmetric(horizontal: 16),
+          padding:EdgeInsets.symmetric(horizontal: 10),
           child:
           Column(children: [
             SizedBox(
