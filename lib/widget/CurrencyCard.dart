@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class CurrencyCard extends StatelessWidget {
   final String name, code, amount;
   final IconData icon;
-  final bool isInverted;
+  // final bool isInverted;
   final int order;
 
   const CurrencyCard({
@@ -12,13 +12,14 @@ class CurrencyCard extends StatelessWidget {
     required this.code,
     required this.amount,
     required this.icon,
-    required this.isInverted,
+    // required this.isInverted,
     required this.order,
   });
 
   @override
   Widget build(BuildContext context) {
     double offset = order * -20;
+    bool isInverted = order % 2 != 0 ? true : false;
     return Transform.translate(
       offset: Offset(0, offset),
       child: (Container(
