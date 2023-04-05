@@ -3,7 +3,48 @@ import 'package:toonflix/widget/Button.dart';
 import 'package:toonflix/widget/CurrencyCard.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const StateTest());
+}
+
+class StateTest extends StatefulWidget {
+  const StateTest({super.key});
+
+  @override
+  State<StateTest> createState() => _StateTestState();
+}
+
+class _StateTestState extends State<StateTest> {
+  int counter = 0;
+
+  void onClicked() {
+    counter++;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        home: Scaffold(
+      backgroundColor: const Color.fromARGB(255, 245, 246, 237),
+      body: Center(
+        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+          const Text(
+            'ClickCount',
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+          Text(
+            '$counter',
+            style: const TextStyle(
+              fontSize: 18,
+            ),
+          ),
+          IconButton(onPressed: onClicked, icon: const Icon(Icons.add))
+        ]),
+      ),
+    ));
+  }
 }
 
 class MyApp extends StatelessWidget {

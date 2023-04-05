@@ -17,3 +17,7 @@ void main() {
 
 ### constant
 `contstant` 값을 사용하므로서, 런타임 대신 컴파일 중에 값을 산정할 수 있음.
+
+### state
+* `stateful` : (has state > stateful) data와 UI를 동시에 저장
+* `stateless` : fltterUI를 제작하기 위해 있음, 변경되지 않을 데이터를 보여줌
