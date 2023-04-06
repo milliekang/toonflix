@@ -21,3 +21,4 @@ void main() {
 ### state
 * `stateful` : (has state > stateful) data와 UI를 동시에 저장
 * `stateless` : fltterUI를 제작하기 위해 있음, 변경되지 않을 데이터를 보여줌
+* `setState()` : 데이터의 변경을 감지시킴

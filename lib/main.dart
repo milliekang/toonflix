@@ -17,7 +17,9 @@ class _StateTestState extends State<StateTest> {
   int counter = 0;
 
   void onClicked() {
-    counter++;
+    setState(() {
+      counter++;
+    });
   }
 
   @override
