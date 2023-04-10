@@ -26,22 +26,38 @@ class _StateTestState extends State<StateTest> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: Scaffold(
-      backgroundColor: const Color.fromARGB(255, 245, 246, 237),
-      body: Center(
-        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          const Text(
-            'ClickCount',
-            style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.w600,
+        theme: ThemeData(
+          textTheme: const TextTheme(
+            titleLarge: TextStyle(
+              color: Colors.amber,
             ),
           ),
-          for (var number in numbers) Text('$number'),
-          IconButton(onPressed: onClicked, icon: const Icon(Icons.add))
-        ]),
+        ),
+        home: Scaffold(
+          backgroundColor: const Color.fromARGB(255, 245, 246, 237),
+          body: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [MyLargeText()],
+            ),
+          ),
+        ));
+  }
+}
+
+class MyLargeText extends StatelessWidget {
+  const MyLargeText({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      'My Large Title',
+      style: TextStyle(
+        fontSize: 30,
+        fontWeight: FontWeight.w700,
+        color: Theme.of(context).textTheme.titleLarge!.color,
       ),
-    ));
+    );
   }
 }
 
