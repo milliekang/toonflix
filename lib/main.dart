@@ -17,9 +17,30 @@ class _StateTestState extends State<StateTest> {
   List<int> numbers = [];
   int counter = 0;
 
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    print("dispose");
+  }
+
   void onClicked() {
     setState(() {
       numbers.add(numbers.length);
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    print("hello");
+  }
+
+  bool showTitle = true;
+
+  void toggleTitle() {
+    setState(() {
+      showTitle = !showTitle;
     });
   }
 
@@ -38,7 +59,12 @@ class _StateTestState extends State<StateTest> {
           body: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const [MyLargeText()],
+              children: [
+                showTitle ? const MyLargeText() : const Text('hello'),
+                IconButton(
+                    onPressed: toggleTitle,
+                    icon: const Icon(Icons.remove_red_eye_rounded))
+              ],
             ),
           ),
         ));
@@ -63,7 +89,6 @@ class MyLargeText extends StatelessWidget {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {

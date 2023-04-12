@@ -27,3 +27,26 @@ void main() {
 플러터의 `BuildContext`는 앱의 위젯 트리 내에서 현재 위젯의 위치를 나타내는 객체입니다. 이를 통해 위젯은 앱의 다른 위젯, 리소스 및 서비스에 액세스할 수 있음.
 
 또한 `BuildContext`는 위젯 트리를 변경하거나 다시 그리는 데 필요한 정보를 제공. `BuildContex`t를 사용하여 `setState()`를 호출하고 위젯을 다시 그릴 수 있음
+
+### initState
+* 상태를 초기화
+* build 매서드가 호출되기 전에 호출되며, 최초 1회만 호출된다.
+
+```flutter
+  @override
+  void initState() {
+
+    super.initState();
+  }
+```
+
+### dispose
+* 위젯이 화면에서 사라질 때 호출됨.
+
+```flutter
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+  }
+```
